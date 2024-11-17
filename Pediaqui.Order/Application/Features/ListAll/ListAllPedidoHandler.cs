@@ -1,7 +1,7 @@
 ﻿using Application.Presenters;
 using Domain.Enuns;
 using Domain.Pedido.Ports;
-using Pediaqui.Produto.Ports;
+using Pediaqui.Catalog.Ports;
 
 namespace Application.Features.ListAll;
 
@@ -9,18 +9,16 @@ public class ListAllPedidoHandler : IRequestHandler<ListAllPedidosRequest, ListP
 {
     private readonly NotificationContext _notificationContext;
     private readonly IPedidoRepository _pedidoRepository;
-    private readonly IProdutoRepository _produtoRepository;
     private readonly PedidoPresenter _presenter;
 
     public ListAllPedidoHandler(
         NotificationContext notificationContext,
-        IProdutoRepository produtoRepository,
+        ICatalogRepository catalogRepository,
         IPedidoRepository pedidoRepository,
         PedidoPresenter presenter)
     {
         _notificationContext = notificationContext;
         _pedidoRepository = pedidoRepository;
-        _produtoRepository = produtoRepository;
         _presenter = presenter;
     }
 

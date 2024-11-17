@@ -15,9 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{3E9A65D7-05D4-4E6F-A12C-C1DB74542607}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pediaqui.Produto", "Pediaqui.Produto\Pediaqui.Produto.csproj", "{73EAE138-C48B-4872-8DE6-7C10CE64E246}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pediaqui.Cliente", "Pediaqui.Cliente\Pediaqui.Cliente.csproj", "{FA26424C-E846-43E9-8251-9215A758974A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pediaqui.Catalog", "Pediaqui.Cliente\Pediaqui.Catalog.csproj", "{FA26424C-E846-43E9-8251-9215A758974A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pediaqui.Payment", "Pediaqui.Payment\Pediaqui.Payment.csproj", "{2A969DE9-DA85-42EB-A46B-898480E7C162}"
 EndProject
@@ -27,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{037A67E6-0378-4B5E-B643-C1C800483075}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +42,6 @@ Global
 		{3DD5F92E-2536-4656-86FA-4A31DE98BFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DD5F92E-2536-4656-86FA-4A31DE98BFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DD5F92E-2536-4656-86FA-4A31DE98BFFA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73EAE138-C48B-4872-8DE6-7C10CE64E246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73EAE138-C48B-4872-8DE6-7C10CE64E246}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73EAE138-C48B-4872-8DE6-7C10CE64E246}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73EAE138-C48B-4872-8DE6-7C10CE64E246}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA26424C-E846-43E9-8251-9215A758974A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA26424C-E846-43E9-8251-9215A758974A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA26424C-E846-43E9-8251-9215A758974A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -58,6 +54,10 @@ Global
 		{2B655D96-4071-4A36-850F-261E82ABD40B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B655D96-4071-4A36-850F-261E82ABD40B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B655D96-4071-4A36-850F-261E82ABD40B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{037A67E6-0378-4B5E-B643-C1C800483075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{037A67E6-0378-4B5E-B643-C1C800483075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{037A67E6-0378-4B5E-B643-C1C800483075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{037A67E6-0378-4B5E-B643-C1C800483075}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,10 +65,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{55683907-B795-4E6A-AA33-4C15CB610F9C} = {1D5E3ED5-AE64-4DB4-894C-FA9A9D65EAC4}
 		{3DD5F92E-2536-4656-86FA-4A31DE98BFFA} = {1D5E3ED5-AE64-4DB4-894C-FA9A9D65EAC4}
-		{73EAE138-C48B-4872-8DE6-7C10CE64E246} = {3E9A65D7-05D4-4E6F-A12C-C1DB74542607}
 		{FA26424C-E846-43E9-8251-9215A758974A} = {3E9A65D7-05D4-4E6F-A12C-C1DB74542607}
 		{2A969DE9-DA85-42EB-A46B-898480E7C162} = {3E9A65D7-05D4-4E6F-A12C-C1DB74542607}
 		{2B655D96-4071-4A36-850F-261E82ABD40B} = {1CD9A86E-B2EF-4594-B269-623EB5A299CE}
+		{037A67E6-0378-4B5E-B643-C1C800483075} = {C9DF8A5F-9743-4998-89B4-44359DDFD9D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {960EC449-7B21-40A6-A296-07BEA6F342CC}

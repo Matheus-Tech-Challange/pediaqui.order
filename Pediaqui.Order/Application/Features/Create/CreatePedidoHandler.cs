@@ -1,10 +1,9 @@
 ﻿using Application.Presenters;
 using Domain.Entities;
 using Domain.Pedido.Ports;
-using Pediaqui.Cliente.Ports;
+using Pediaqui.Catalog.Ports;
 using Pediaqui.Payment.Models;
 using Pediaqui.Payment.Ports;
-using Pediaqui.Produto.Ports;
 
 namespace Application.Features.Create
 {
@@ -12,23 +11,20 @@ namespace Application.Features.Create
     {
         private readonly NotificationContext _notificationContext;
         private readonly PedidoPresenter _presenter;
-        private readonly IProdutoRepository _produtoRepository;
         private readonly IPedidoRepository _pedidoRepository;
-        private readonly IClienteRepository _clienteRepository;
+        private readonly ICatalogRepository _catalogRepository;
         private readonly IPaymentRepository _pagamentoExternoGateway;
 
         public CreatePedidoHandler(
             NotificationContext notificationContext,
             PedidoPresenter presenter,
-            IProdutoRepository produtoRepository,
             IPedidoRepository pedidoRepository,
-            IClienteRepository clienteRepository,
+            ICatalogRepository clienteRepository,
             IPaymentRepository pagamentoExternoGateway)
         {
             _notificationContext = notificationContext;
-            _produtoRepository = produtoRepository;
             _pedidoRepository = pedidoRepository;
-            _clienteRepository = clienteRepository;
+            _catalogRepository = clienteRepository;
             _presenter = presenter;
             _pagamentoExternoGateway = pagamentoExternoGateway;
         }
@@ -39,7 +35,7 @@ namespace Application.Features.Create
 
             foreach (var i in request.Itens)
             {
-                var produto = await _produtoRepository.obterPorId(i.Id);
+                var produto = await _catalogRepository.buscarProdutoPorId(i.Id);
 
                 if (produto is null)
                 {
@@ -64,7 +60,7 @@ namespace Application.Features.Create
 
             if (request.CPFCliente != null)
             {
-                var cliente = await _clienteRepository.buscarPorCpf(request.CPFCliente);
+                var cliente = await _catalogRepository.buscarClientePorCpf(request.CPFCliente);
 
                 if (cliente is null)
                 {

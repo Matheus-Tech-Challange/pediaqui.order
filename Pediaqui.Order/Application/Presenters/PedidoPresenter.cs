@@ -1,27 +1,22 @@
 ﻿using Application.Features;
 using AutoMapper;
 using Domain.Entities;
-using Pediaqui.Cliente.Ports;
-using Pediaqui.Payment.Models;
+using Pediaqui.Catalog.Ports;
 using Pediaqui.Payment.Ports;
-using Pediaqui.Produto.Ports;
 
 namespace Application.Presenters;
 
 public class PedidoPresenter
 {
-    private IProdutoRepository _produtoRepository;
-    private IClienteRepository _clienteRepository;
+    private ICatalogRepository _catalogRepository;
     private IPaymentRepository _paymentRepository;
     private IMapper _mapper;
 
     public PedidoPresenter(
-        IProdutoRepository produtoRepository, 
-        IMapper mapper, IClienteRepository clienteRepository, 
+        IMapper mapper, ICatalogRepository clienteRepository,
         IPaymentRepository paymentRepository)
     {
-        _produtoRepository = produtoRepository;
-        _clienteRepository = clienteRepository;
+        _catalogRepository = clienteRepository;
         _mapper = mapper;
         _paymentRepository = paymentRepository;
     }
@@ -53,14 +48,14 @@ public class PedidoPresenter
 
         foreach (var item in map.Itens)
         {
-            var produto = await _produtoRepository.obterPorId(item.ProdutoId);
+            var produto = await _catalogRepository.buscarProdutoPorId(item.ProdutoId);
             item.Nome = produto.Nome!;
         }
 
         if (pedido.CPFCliente != null)
         {
-            var cliente = await _clienteRepository.buscarPorCpf(pedido.CPFCliente);
-            map.ClienteNome = cliente.cpf!;
+            var cliente = await _catalogRepository.buscarClientePorCpf(pedido.CPFCliente);
+            map.ClienteNome = cliente.nome!;
         }
 
         return map;

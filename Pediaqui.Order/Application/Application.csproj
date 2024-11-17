@@ -14,9 +14,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
-    <ProjectReference Include="..\Pediaqui.Cliente\Pediaqui.Cliente.csproj" />
+    <ProjectReference Include="..\Pediaqui.Cliente\Pediaqui.Catalog.csproj" />
     <ProjectReference Include="..\Pediaqui.Payment\Pediaqui.Payment.csproj" />
-    <ProjectReference Include="..\Pediaqui.Produto\Pediaqui.Produto.csproj" />
   </ItemGroup>
 
 </Project>
