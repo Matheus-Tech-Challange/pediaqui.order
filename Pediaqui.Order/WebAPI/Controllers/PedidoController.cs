@@ -2,6 +2,7 @@
 using Application.Features.GetStatusById;
 using Application.Features.ListAll;
 using Application.Features.UpdateStatus;
+using Application.Features.UpdateToPaid;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -84,5 +85,14 @@ public class PedidoController : ControllerBase
         var command = new UpdateStatusPedidoRequest() { PedidoId = id };
         var result = await _mediator.Send(command);
         return Ok(result);
+    }
+
+    [HttpPost]
+    [Route("receber/{pedidoId}")]
+    public async Task<IActionResult> Receber([FromRoute] int pedidoId)
+    {
+        var command = new UpdateToPaidRequest() { PedidoId = pedidoId };
+        await _mediator.Send(command);
+        return Ok();
     }
 }
